@@ -1,0 +1,13 @@
+[
+  {
+    "id": "APP-1766386809065",
+    "submittedAt": "2025-12-22T07:00:09.065Z",
+    "status": "New",
+    "jobId": "JOB-1766386699007",
+    "jobTitle": "Senior React Dev",
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "resumeLink": "github.com/jane",
+    "coverLetter": "I am interested."
+  }
+]

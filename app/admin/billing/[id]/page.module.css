@@ -1,0 +1,162 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.invoice {
+    background: white;
+    color: #333;
+    padding: 4rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 2rem;
+}
+
+.brand h1 {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    color: #000;
+}
+
+.brand p {
+    color: #666;
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+}
+
+.highlight {
+    color: #0071ff;
+}
+
+.invoiceTitle {
+    color: #0071ff;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.meta p {
+    margin: 0.3rem 0;
+    color: #555;
+    text-align: right;
+}
+
+.details {
+    margin-bottom: 3rem;
+}
+
+.clientName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.details p {
+    margin: 0.3rem 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+}
+
+.table th {
+    background: #f8f9fa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+.descCell {
+    width: 50%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.notes {
+    flex: 1;
+}
+
+.notes h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.notes p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+}
+
+.totalSection {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    min-width: 250px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.grandTotal {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+@media print {
+    .actions {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .invoice {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}

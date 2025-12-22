@@ -1,0 +1,178 @@
+.container {
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.jobList {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.jobCard {
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.jobCard.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.jobCard h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    color: #aaa;
+    margin-bottom: 0.5rem;
+    /* Reduced to fit extra line */
+    font-size: 0.9rem;
+}
+
+.viewBtn {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.detailsPanel {
+    flex: 1.5;
+    padding: 2rem;
+    border-radius: 16px;
+    position: sticky;
+    top: 100px;
+    animation: slideIn 0.3s ease;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.detailsPanel h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.description {
+    color: #ddd;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    margin-bottom: 2rem;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.row input {
+    width: 100%;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+}
+
+.form textarea {
+    min-height: 100px;
+}
+
+.success {
+    background: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}

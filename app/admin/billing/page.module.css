@@ -1,0 +1,74 @@
+.container {
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.tableReflow {
+    overflow-x: auto;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    color: #ccc;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.paid {
+    background: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+}
+
+.pending {
+    background: rgba(241, 196, 15, 0.2);
+    color: #f1c40f;
+}
+
+.empty {
+    text-align: center;
+    padding: 4rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+}
+
+.smBtn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}

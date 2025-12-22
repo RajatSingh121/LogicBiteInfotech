@@ -1,0 +1,75 @@
+.footer {
+    background: black;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem 0 2rem;
+    margin-top: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+.col h4 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.description {
+    color: #aaa;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.highlight {
+    color: #0071ff;
+}
+
+.col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.col ul li {
+    margin-bottom: 0.8rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.col ul li:hover {
+    color: #fff;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

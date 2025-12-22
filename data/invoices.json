@@ -1,0 +1,64 @@
+[
+  {
+    "id": "INV-1766386543868",
+    "createdAt": "2025-12-22T06:55:43.868Z",
+    "status": "Pending",
+    "clientName": "Acme Corp",
+    "clientEmail": "admin@acme.com",
+    "clientAddress": "42 Business Rd, Tech City",
+    "items": [
+      {
+        "description": "Software Consulting",
+        "quantity": 10,
+        "price": 200
+      }
+    ],
+    "totalAmount": 2000
+  },
+  {
+    "id": "INV-1766387325560",
+    "createdAt": "2025-12-22T07:08:45.560Z",
+    "status": "Pending",
+    "clientName": "Mega Corp",
+    "clientEmail": "",
+    "clientPhone": "",
+    "clientAddress": "",
+    "taxId": "GST123",
+    "invoiceDate": "2025-12-22",
+    "dueDate": "",
+    "currency": "EUR",
+    "paymentTerms": "Net 30",
+    "poNumber": "",
+    "items": [
+      {
+        "description": "Consulting",
+        "quantity": 1,
+        "price": 5000
+      }
+    ],
+    "totalAmount": 5000
+  },
+  {
+    "id": "INV-1766387691657",
+    "createdAt": "2025-12-22T07:14:51.657Z",
+    "status": "Pending",
+    "clientName": "Final Demo Corp",
+    "clientEmail": "demo@example.com",
+    "clientPhone": "",
+    "clientAddress": "123 Demo Street",
+    "taxId": "TAX-999",
+    "invoiceDate": "2025-12-22",
+    "dueDate": "51231-02-20",
+    "currency": "USD",
+    "paymentTerms": "Net 30",
+    "poNumber": "",
+    "items": [
+      {
+        "description": "Demo Service",
+        "quantity": 1,
+        "price": 1000
+      }
+    ],
+    "totalAmount": 1000
+  }
+]
