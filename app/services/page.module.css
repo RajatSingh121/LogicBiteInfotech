@@ -23,7 +23,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     padding: 0 2rem;
 }
@@ -31,12 +31,15 @@
 .card {
     padding: 2.5rem;
     border-radius: 16px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(79, 172, 254, 0.3);
 }
 
 .icon {
@@ -53,4 +56,26 @@
 .card p {
     color: #aaa;
     line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    /* Pushes content down */
+}
+
+.priceTag {
+    font-size: 1.1rem;
+    color: #4facfe;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Adjust button widths on card */
+.actions button {
+    flex: 1;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
 }

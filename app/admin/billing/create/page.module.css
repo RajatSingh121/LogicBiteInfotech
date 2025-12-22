@@ -52,6 +52,35 @@
     color: #fff;
 }
 
+.itemHeader {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    color: #aaa;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.descLabel {
+    flex: 3;
+}
+
+.hsnLabel {
+    flex: 1;
+}
+
+.qtyLabel {
+    flex: 0.5;
+}
+
+.priceLabel {
+    flex: 1;
+}
+
+.emptyLabel {
+    width: 30px;
+}
+
 .itemRow {
     display: flex;
     gap: 1rem;
@@ -59,8 +88,10 @@
     align-items: center;
 }
 
-.descInput {
-    flex: 3;
+.descInput,
+.hsnInput,
+.qtyInput,
+.priceInput {
     padding: 0.8rem;
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -68,13 +99,20 @@
     color: #fff;
 }
 
-.numInput {
+.descInput {
+    flex: 3;
+}
+
+.hsnInput {
     flex: 1;
-    padding: 0.8rem;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: #fff;
+}
+
+.qtyInput {
+    flex: 0.5;
+}
+
+.priceInput {
+    flex: 1;
 }
 
 .removeBtn {
@@ -83,11 +121,24 @@
     color: #ff4444;
     font-size: 1.5rem;
     cursor: pointer;
+    width: 30px;
 }
 
 .addBtn {
     margin-top: 1rem;
     width: 100%;
+}
+
+.discountSection {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.discountSection .formGroup {
+    width: 250px;
 }
 
 .footer {

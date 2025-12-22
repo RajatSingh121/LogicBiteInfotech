@@ -20,123 +20,192 @@
 .header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3rem;
-    border-bottom: 2px solid #eee;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #000;
     padding-bottom: 2rem;
 }
 
-.brand h1 {
-    font-size: 1.8rem;
+.brand {
+    flex: 1;
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.companyName {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #002D62;
+    /* Corporate Blue */
     margin: 0 0 0.5rem 0;
-    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .brand p {
-    color: #666;
-    margin: 0.2rem 0;
-    font-size: 0.9rem;
+    color: #444;
+    margin: 0.1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
-.highlight {
-    color: #0071ff;
+.contactInfo {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid #eee;
+}
+
+.meta {
+    text-align: right;
+    flex: 0.6;
 }
 
 .invoiceTitle {
-    color: #0071ff;
-    letter-spacing: 2px;
+    color: #002D62;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
     margin-bottom: 1rem;
+    font-weight: 900;
+    opacity: 0.9;
 }
 
 .meta p {
     margin: 0.3rem 0;
-    color: #555;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.legalMeta {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 3px solid #002D62;
     text-align: right;
 }
 
 .details {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.to {
+    flex: 1;
+}
+
+.to h3 {
+    color: #002D62;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 .clientName {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #000;
-    margin-bottom: 0.5rem;
-}
-
-.details p {
-    margin: 0.3rem 0;
+    margin-bottom: 0.3rem;
 }
 
 .table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .table th {
-    background: #f8f9fa;
-    padding: 1rem;
+    background: #002D62;
+    color: white;
+    padding: 0.8rem;
     text-align: left;
     font-weight: 600;
-    color: #333;
-    border-bottom: 2px solid #ddd;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
 }
 
 .table td {
-    padding: 1rem;
+    padding: 1rem 0.8rem;
     border-bottom: 1px solid #eee;
-    color: #444;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.table tr:nth-child(even) {
+    background-color: #fcfcfc;
 }
 
 .descCell {
-    width: 50%;
+    width: 40%;
+    font-weight: 500;
+}
+
+.amountWords {
+    background: #f0f7ff;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #002D62;
+}
+
+.amountWords h4 {
+    color: #002D62;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.amountWords p {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    color: #333;
+}
+
+.thankYou {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #002D62 !important;
 }
 
 .footer {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-}
-
-.notes {
-    flex: 1;
-}
-
-.notes h4 {
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.notes p {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0.2rem 0;
+    align-items: flex-start;
+    padding-top: 2rem;
+    border-top: 2px solid #000;
 }
 
 .totalSection {
     background: #f8f9fa;
     padding: 1.5rem;
-    border-radius: 8px;
-    min-width: 250px;
+    border-radius: 4px;
+    min-width: 280px;
+    border: 1px solid #e0e0e0;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
-    color: #666;
+    color: #555;
+    font-size: 0.9rem;
 }
 
 .grandTotal {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #ddd;
+    border-top: 2px solid #002D62;
     padding-top: 1rem;
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #000;
+    margin-top: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #002D62;
 }
 
 @media print {

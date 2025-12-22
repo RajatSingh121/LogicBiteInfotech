@@ -19,22 +19,32 @@ export default function InvoiceViewPage() {
     return (
         <div className={styles.container}>
             <div className={styles.actions}>
+                <Button onClick={() => window.location.href = `/checkout/${invoice.id}`} variant="primary" style={{ marginRight: '1rem', background: '#28a745' }}>Pay Now</Button>
                 <Button onClick={() => window.print()} variant="primary">Download/Print PDF</Button>
             </div>
 
             <div className={`${styles.invoice} invoice-print`}>
                 <header className={styles.header}>
                     <div className={styles.brand}>
-                        <h1>LogicBite<span className={styles.highlight}>Infotech</span></h1>
-                        <p>123 Innovation Drive, Tech City, TC 90210</p>
-                        <p>Tax ID: LBI-9988776655</p>
+                        <img src="/company_logo.png" alt="LogicBite Logo" className={styles.logo} />
+                        <h1 className={styles.companyName}>LOGICBITE INFOTECH OPC PVT LTD</h1>
+                        <p>Chhanabe, Sadar, Gaipura, Kalana, Mirzapur</p>
+                        <p>Uttar Pradesh, 231303, India</p>
+                        <div className={styles.contactInfo}>
+                            <p><strong>Email:</strong> logicbite25@gmail.com</p>
+                            <p><strong>WhatsApp:</strong> +91 9026181492</p>
+                        </div>
                     </div>
                     <div className={styles.meta}>
                         <h2 className={styles.invoiceTitle}>INVOICE</h2>
                         <p><strong>Invoice #:</strong> {invoice.id}</p>
                         <p><strong>Date:</strong> {new Date(invoice.invoiceDate || invoice.createdAt).toLocaleDateString()}</p>
                         <p><strong>Due Date:</strong> {invoice.dueDate ? new Date(invoice.dueDate).toLocaleDateString() : 'Upon Receipt'}</p>
-                        <p><strong>Terms:</strong> {invoice.paymentTerms || 'Net 30'}</p>
+                        <div className={styles.legalMeta}>
+                            <p><strong>GSTIN:</strong> 09AAGCL4213P1Z5</p>
+                            <p><strong>CIN:</strong> U62099UP2025OPC229455</p>
+                            <p><strong>PAN:</strong> AAGCL4213P</p>
+                        </div>
                     </div>
                 </header>
 
@@ -43,7 +53,7 @@ export default function InvoiceViewPage() {
                         <h3>Bill To:</h3>
                         <p className={styles.clientName}>{invoice.clientName}</p>
                         <p>{invoice.clientAddress}</p>
-                        {invoice.taxId && <p><strong>Tax ID:</strong> {invoice.taxId}</p>}
+                        {invoice.taxId && <p><strong>GSTIN:</strong> {invoice.taxId}</p>}
                         <p>{invoice.clientEmail}</p>
                         {invoice.clientPhone && <p>{invoice.clientPhone}</p>}
                         {invoice.poNumber && <p><strong>PO #:</strong> {invoice.poNumber}</p>}
@@ -54,6 +64,7 @@ export default function InvoiceViewPage() {
                     <thead>
                         <tr>
                             <th>Description</th>
+                            <th>HSN/SAC</th>
                             <th style={{ textAlign: 'center' }}>Qty</th>
                             <th style={{ textAlign: 'right' }}>Price</th>
                             <th style={{ textAlign: 'right' }}>Total</th>
@@ -63,9 +74,10 @@ export default function InvoiceViewPage() {
                         {invoice.items.map((item, index) => (
                             <tr key={index}>
                                 <td className={styles.descCell}>{item.description}</td>
+                                <td>{item.hsn || '-'}</td>
                                 <td style={{ textAlign: 'center' }}>{item.quantity}</td>
-                                <td style={{ textAlign: 'right' }}>{invoice.currency} {item.price.toFixed(2)}</td>
-                                <td style={{ textAlign: 'right' }}>{invoice.currency} {(item.quantity * item.price).toFixed(2)}</td>
+                                <td style={{ textAlign: 'right' }}>₹ {item.price ? item.price.toFixed(2) : '0.00'}</td>
+                                <td style={{ textAlign: 'right' }}>₹ {((item.quantity || 1) * (item.price || 0)).toFixed(2)}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -75,23 +87,25 @@ export default function InvoiceViewPage() {
                     <div className={styles.totalSection}>
                         <div className={styles.row}>
                             <span>Subtotal:</span>
-                            <span>{invoice.currency} {invoice.totalAmount.toFixed(2)}</span>
+                            <span>₹ {invoice.totalAmount.toFixed(2)}</span>
                         </div>
                         <div className={styles.row}>
                             <span>Tax (0%):</span>
-                            <span>{invoice.currency} 0.00</span>
+                            <span>₹ 0.00</span>
                         </div>
                         <div className={styles.grandTotal}>
                             <span>Total Amount:</span>
-                            <span>{invoice.currency} {invoice.totalAmount.toFixed(2)}</span>
+                            <span>₹ {invoice.totalAmount.toFixed(2)}</span>
                         </div>
                     </div>
 
                     <div className={styles.notes}>
                         <h4>Bank Details</h4>
-                        <p>Bank: Tech City Bank</p>
-                        <p>Account: 1234-5678-9000</p>
-                        <p>SWIFT: TCBUS33</p>
+                        <p><strong>Account Name:</strong> LOGICBITE INFOTECH OPC PVT LTD</p>
+                        <p><strong>Account Number:</strong> 259026181492</p>
+                        <p><strong>IFSC Code:</strong> INDB0001682</p>
+                        <p><strong>Branch:</strong> MIRZAPUR</p>
+                        <p><strong>Bank:</strong> IndusInd Bank</p>
                         <br />
                         <p>Thank you for your business!</p>
                     </div>

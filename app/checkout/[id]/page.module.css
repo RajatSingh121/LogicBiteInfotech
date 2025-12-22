@@ -1,0 +1,122 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.card {
+    background: white;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    color: #002D62;
+    margin: 0;
+}
+
+.summary {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    color: #002D62;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.methods {
+    margin-bottom: 2rem;
+}
+
+.methods h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.method {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.method.active {
+    border-color: #002D62;
+    background: #f0f7ff;
+}
+
+.methodName {
+    margin-left: 1rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+.badges {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.payBtn {
+    width: 100%;
+    padding: 1rem;
+    background: #002D62;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.payBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.secured {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #888;
+    font-size: 0.8rem;
+}

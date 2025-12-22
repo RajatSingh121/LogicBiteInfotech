@@ -33,16 +33,19 @@ export default function Home() {
                 <h2 className={styles.sectionTitle}>Our Expertise</h2>
                 <div className={styles.grid}>
                     <div className={`${styles.card} glass`}>
-                        <h3>IT Consulting</h3>
-                        <p>Strategic guidance to align technology with your business goals.</p>
+                        <h3>Custom Software</h3>
+                        <p>Scalable software tailored to your specific business needs.</p>
+                        <Link href="/services/custom-software-development"><span className={styles.linkArrow}>Learn more &rarr;</span></Link>
                     </div>
                     <div className={`${styles.card} glass`}>
-                        <h3>Web Development</h3>
-                        <p>Stunning, high-performance websites and web applications.</p>
+                        <h3>Cloud Infrastructure</h3>
+                        <p>Secure cloud solutions for migration and management.</p>
+                        <Link href="/services/cloud-infrastructure"><span className={styles.linkArrow}>Learn more &rarr;</span></Link>
                     </div>
                     <div className={`${styles.card} glass`}>
-                        <h3>Cloud Solutions</h3>
-                        <p>Scalable cloud infrastructure and migration services.</p>
+                        <h3>Data Analytics</h3>
+                        <p>Turn your data into actionable insights with AI.</p>
+                        <Link href="/services/data-analytics-ai"><span className={styles.linkArrow}>Learn more &rarr;</span></Link>
                     </div>
                 </div>
             </section>

@@ -11,13 +11,14 @@ export default function CreateInvoicePage() {
         clientEmail: '',
         clientPhone: '',
         clientAddress: '',
-        taxId: '', // GSTIN or VAT ID
+        taxId: '', // GSTIN
         invoiceDate: new Date().toISOString().split('T')[0],
         dueDate: '',
-        currency: 'USD',
+        currency: 'INR',
         paymentTerms: 'Net 30',
         poNumber: '',
-        items: [{ description: '', quantity: 1, price: 0 }],
+        discount: 0,
+        items: [{ description: '', hsn: '', quantity: 1, price: 0 }],
     });
 
     const handleItemChange = (index, field, value) => {
@@ -29,7 +30,7 @@ export default function CreateInvoicePage() {
     const addItem = () => {
         setFormData({
             ...formData,
-            items: [...formData.items, { description: '', quantity: 1, price: 0 }],
+            items: [...formData.items, { description: '', hsn: '', quantity: 1, price: 0 }],
         });
     };
 
@@ -39,7 +40,8 @@ export default function CreateInvoicePage() {
     };
 
     const calculateTotal = () => {
-        return formData.items.reduce((sum, item) => sum + (item.quantity * item.price), 0);
+        const subtotal = formData.items.reduce((sum, item) => sum + (item.quantity * item.price), 0);
+        return subtotal - (formData.discount || 0);
     };
 
     const handleSubmit = async (e) => {
@@ -75,7 +77,7 @@ export default function CreateInvoicePage() {
                             />
                         </div>
                         <div className={styles.formGroup}>
-                            <label>Tax ID / GSTIN</label>
+                            <label>Client GSTIN</label>
                             <input
                                 type="text"
                                 placeholder="Optional"
@@ -134,15 +136,12 @@ export default function CreateInvoicePage() {
                         </div>
                         <div className={styles.formGroup}>
                             <label>Currency</label>
-                            <select
-                                value={formData.currency}
-                                onChange={(e) => setFormData({ ...formData, currency: e.target.value })}
-                            >
-                                <option>USD</option>
-                                <option>EUR</option>
-                                <option>GBP</option>
-                                <option>INR</option>
-                            </select>
+                            <input
+                                type="text"
+                                value="INR (₹)"
+                                disabled
+                                className={styles.disabledInput}
+                            />
                         </div>
                         <div className={styles.formGroup}>
                             <label>PO Number</label>
@@ -157,40 +156,64 @@ export default function CreateInvoicePage() {
 
                 <div className={styles.section}>
                     <h2>Items</h2>
+                    <div className={styles.itemHeader}>
+                        <label className={styles.descLabel}>Description</label>
+                        <label className={styles.hsnLabel}>HSN/SAC</label>
+                        <label className={styles.qtyLabel}>Qty</label>
+                        <label className={styles.priceLabel}>Price</label>
+                        <label className={styles.emptyLabel}></label>
+                    </div>
                     {formData.items.map((item, index) => (
                         <div key={index} className={styles.itemRow}>
                             <input
-                                placeholder="Description"
                                 value={item.description}
                                 onChange={(e) => handleItemChange(index, 'description', e.target.value)}
                                 className={styles.descInput}
                                 required
                             />
                             <input
-                                type="number"
-                                placeholder="Qty"
-                                min="1"
-                                value={item.quantity}
-                                onChange={(e) => handleItemChange(index, 'quantity', Number(e.target.value))}
-                                className={styles.numInput}
+                                value={item.hsn}
+                                onChange={(e) => handleItemChange(index, 'hsn', e.target.value)}
+                                className={styles.hsnInput}
+                                required
                             />
                             <input
                                 type="number"
-                                placeholder="Price"
+                                min="1"
+                                value={item.quantity}
+                                onChange={(e) => handleItemChange(index, 'quantity', Number(e.target.value))}
+                                className={styles.qtyInput}
+                            />
+                            <input
+                                type="number"
                                 min="0"
                                 step="0.01"
                                 value={item.price}
                                 onChange={(e) => handleItemChange(index, 'price', Number(e.target.value))}
-                                className={styles.numInput}
+                                className={styles.priceInput}
                             />
                             <button type="button" onClick={() => removeItem(index)} className={styles.removeBtn}>×</button>
                         </div>
                     ))}
                     <Button type="button" variant="secondary" onClick={addItem} className={styles.addBtn}>+ Add Item</Button>
+
+                    <div className={styles.discountSection}>
+                        <div className={styles.formGroup}>
+                            <label>Discount (₹)</label>
+                            <input
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                value={formData.discount}
+                                onChange={(e) => setFormData({ ...formData, discount: Number(e.target.value) })}
+                                className={styles.discountInput}
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 <div className={styles.footer}>
-                    <h3>Total: {formData.currency} {calculateTotal().toFixed(2)}</h3>
+                    <h3>Total: ₹ {calculateTotal().toFixed(2)}</h3>
                     <Button type="submit" variant="primary">Generate Invoice</Button>
                 </div>
             </form>

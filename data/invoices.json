@@ -60,5 +60,73 @@
       }
     ],
     "totalAmount": 1000
+  },
+  {
+    "id": "INV-1766391103210",
+    "createdAt": "2025-12-22T08:11:43.210Z",
+    "status": "Pending",
+    "clientName": "Tech Solutions India",
+    "clientEmail": "tech@india.com",
+    "clientPhone": "",
+    "clientAddress": "Mumbai, Maharashtra",
+    "taxId": "27ABCDE1234F1Z5",
+    "invoiceDate": "2025-12-22",
+    "dueDate": "2026-01-22",
+    "currency": "INR",
+    "paymentTerms": "Net 30",
+    "poNumber": "",
+    "items": [
+      {
+        "description": "Software Dev",
+        "hsn": "998311",
+        "quantity": 1,
+        "price": 50000
+      }
+    ],
+    "totalAmount": 50000
+  },
+  {
+    "id": "INV-1766391809951",
+    "createdAt": "2025-12-22T08:23:29.952Z",
+    "status": "Pending",
+    "clientName": "Advanced Features Corp",
+    "clientEmail": "adv@example.com",
+    "clientPhone": "",
+    "clientAddress": "Bangalore",
+    "taxId": "",
+    "invoiceDate": "2025-12-22",
+    "dueDate": "2026-01-01",
+    "currency": "INR",
+    "paymentTerms": "Net 30",
+    "poNumber": "",
+    "discount": 2000,
+    "items": [
+      {
+        "description": "Software",
+        "hsn": "9983",
+        "quantity": 2,
+        "price": 10000
+      }
+    ],
+    "totalAmount": 18000
+  },
+  {
+    "id": "INV-1766394056579",
+    "createdAt": "2025-12-22T09:00:56.579Z",
+    "status": "Pending",
+    "clientName": "Verification User",
+    "clientEmail": "verify@example.com",
+    "clientPhone": "1234567890",
+    "clientAddress": "Test Address",
+    "items": [
+      {
+        "description": "IT Consulting",
+        "quantity": 1,
+        "price": 19999,
+        "hsn": "998311"
+      }
+    ],
+    "dueDate": "2025-12-22",
+    "paymentTerms": "Immediate"
   }
 ]
