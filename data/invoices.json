@@ -128,5 +128,24 @@
     ],
     "dueDate": "2025-12-22",
     "paymentTerms": "Immediate"
+  },
+  {
+    "id": "INV-1766467788579",
+    "createdAt": "2025-12-23T05:29:48.579Z",
+    "status": "Pending",
+    "clientName": "",
+    "clientEmail": "",
+    "clientPhone": "",
+    "clientAddress": "",
+    "items": [
+      {
+        "description": "Custom Software Development",
+        "quantity": 1,
+        "price": 49999,
+        "hsn": "998311"
+      }
+    ],
+    "dueDate": "2025-12-23",
+    "paymentTerms": "Immediate"
   }
 ]

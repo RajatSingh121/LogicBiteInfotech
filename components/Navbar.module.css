@@ -17,6 +17,19 @@
     padding: 0 2rem;
 }
 
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    object-fit: contain;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+    /* Glow effect for logo */
+}
+
+/* 
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -27,7 +40,8 @@
 
 .highlight {
     color: #0071ff;
-}
+} 
+*/
 
 .links {
     display: flex;

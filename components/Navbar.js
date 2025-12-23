@@ -1,12 +1,20 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
     return (
         <nav className={`${styles.navbar} glass`}>
             <div className={styles.container}>
-                <Link href="/" className={styles.logo}>
-                    LogicBite<span className={styles.highlight}>Infotech</span>
+                <Link href="/" className={styles.logoContainer}>
+                    <Image
+                        src="/company_logo.png"
+                        alt="LogicBite Infotech Logo"
+                        width={180}
+                        height={50}
+                        className={styles.logoImage}
+                        priority
+                    />
                 </Link>
                 <div className={styles.links}>
                     <Link href="/services" className={styles.link}>Services</Link>
