@@ -121,17 +121,17 @@ export default function BillingPage() {
                         </thead>
                         <tbody>
                             {filteredInvoices.map(inv => (
-                                <tr key={inv.id}>
-                                    <td style={{ fontFamily: 'monospace', fontWeight: 600 }}>{inv.id}</td>
+                                <tr key={inv.id || Math.random()}>
+                                    <td style={{ fontFamily: 'monospace', fontWeight: 600 }}>{inv.id || 'N/A'}</td>
                                     <td>
-                                        <div style={{ fontWeight: 600 }}>{inv.clientName}</div>
-                                        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{inv.clientEmail}</div>
+                                        <div style={{ fontWeight: 600 }}>{inv.clientName || 'Unknown Client'}</div>
+                                        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{inv.clientEmail || '-'}</div>
                                     </td>
-                                    <td>{new Date(inv.createdAt).toLocaleDateString()}</td>
-                                    <td style={{ fontWeight: 700 }}>${inv.totalAmount.toLocaleString()}</td>
+                                    <td>{inv.createdAt ? new Date(inv.createdAt).toLocaleDateString() : 'N/A'}</td>
+                                    <td style={{ fontWeight: 700 }}>${(inv.totalAmount || 0).toLocaleString()}</td>
                                     <td>
-                                        <span className={`${styles.status} ${styles[inv.status.toLowerCase()]}`}>
-                                            {inv.status}
+                                        <span className={`${styles.status} ${styles[(inv.status || 'pending').toLowerCase()]}`}>
+                                            {inv.status || 'Pending'}
                                         </span>
                                     </td>
                                     <td>
