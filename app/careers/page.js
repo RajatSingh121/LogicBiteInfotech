@@ -55,8 +55,8 @@ export default function CareersPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <h1 className="title-gradient">Join LogicBite Infotech</h1>
-                <p>Build the future of technology with us.</p>
+                <h1 className={styles.title}>Join LogicBite Infotech</h1>
+                <p className={styles.subtitle}>Build the future of technology with us.</p>
             </header>
 
             <div className={styles.content}>

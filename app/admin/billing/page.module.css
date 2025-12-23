@@ -1,5 +1,5 @@
 .container {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .header {
@@ -11,13 +11,16 @@
 
 .title {
     font-size: 2rem;
+    color: var(--text-primary);
+    font-weight: 700;
 }
 
 .tableReflow {
     overflow-x: auto;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
 }
 
 .table {
@@ -28,47 +31,167 @@
 
 .table th,
 .table td {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .table th {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-primary);
     font-weight: 600;
-    color: #ccc;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    color: var(--text-primary);
+    font-size: 0.95rem;
 }
 
 .table tr:last-child td {
     border-bottom: none;
 }
 
+.table tr:hover {
+    background: var(--bg-primary);
+}
+
 .status {
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
 }
 
 .paid {
-    background: rgba(46, 204, 113, 0.2);
-    color: #2ecc71;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .pending {
-    background: rgba(241, 196, 15, 0.2);
-    color: #f1c40f;
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .empty {
     text-align: center;
     padding: 4rem;
-    color: #666;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
+    color: var(--text-secondary);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
 }
 
 .smBtn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+}
+
+/* Analytics & Controls */
+.analyticsBar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metric {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+.metricLabel {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.metricValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.progressBar {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-primary);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progressBar>div {
+    height: 100%;
+    border-radius: 3px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.searchInput {
+    flex: 1;
+    min-width: 300px;
+    padding: 0.875rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.searchInput:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.filters {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filterBtn {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.filterBtn:hover {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.activeFilter {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.activeFilter:hover {
+    background: var(--primary-color);
+    color: white;
 }

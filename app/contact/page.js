@@ -5,8 +5,8 @@ export default function ContactPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <h1 className="title-gradient">Get In Touch</h1>
-                <p>Ready to transform your business? Let's talk.</p>
+                <h1 className={styles.title}>Get In Touch</h1>
+                <p className={styles.subtitle}>Ready to transform your business? Let's talk.</p>
             </header>
 
             <div className={styles.content}>

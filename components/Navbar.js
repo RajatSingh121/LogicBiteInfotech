@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.css';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
     return (
@@ -21,6 +22,7 @@ export default function Navbar() {
                     <Link href="/careers" className={styles.link}>Careers</Link>
                     <Link href="/contact" className={styles.link}>Contact</Link>
                     <Link href="/admin/billing" className={`${styles.link} ${styles.adminLink}`}>Admin</Link>
+                    <ThemeToggle />
                 </div>
             </div>
         </nav>

@@ -47,35 +47,171 @@
     width: 100%;
 }
 
-.gridList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+/* Kanban Board Layout */
+.boardContainer {
+    display: flex;
+    overflow-x: auto;
     gap: 1.5rem;
+    padding-bottom: 2rem;
+    height: calc(100vh - 200px);
 }
 
-.jobCard {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.column {
+    min-width: 320px;
+    background: var(--card-bg);
+    /* Adjust for new theme */
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--card-border);
+    max-height: 100%;
 }
 
-.jobCard h3 {
-    margin-bottom: 0.5rem;
-    color: #fff;
+.columnHeader {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: var(--card-bg);
+    border-radius: 16px 16px 0 0;
+    z-index: 10;
 }
 
-.meta {
-    color: #aaa;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+.columnTitle {
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.date {
+.countBadge {
+    background: var(--bg-primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
     font-size: 0.8rem;
-    color: #666;
+    color: var(--text-secondary);
 }
 
-.empty {
-    color: #666;
+.columnContent {
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Candidate Card */
+.candidateCard {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.candidateCard:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow);
+    border-color: var(--primary-color);
+}
+
+.aiBadge {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.matchHigh {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.matchMed {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+}
+
+.matchLow {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.candidateName {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.candidateRole {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.cardActions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.actionBtn {
+    flex: 1;
+    padding: 0.4rem;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.actionBtn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Tab/Toggle Styles */
+.viewToggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    width: fit-content;
+    border: 1px solid var(--card-border);
+}
+
+.toggleBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.activeToggle {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
 }

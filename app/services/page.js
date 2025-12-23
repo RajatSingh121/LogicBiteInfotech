@@ -7,14 +7,14 @@ export default function ServicesPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <h1 className="title-gradient">Our Services</h1>
-                <p>Comprehensive IT solutions for the modern enterprise.</p>
+                <h1 className={styles.title}>Our Services</h1>
+                <p className={styles.subtitle}>Comprehensive IT solutions tailored for the modern enterprise, driven by innovation and excellence.</p>
             </header>
 
             <div className={styles.grid}>
                 {SERVICES.map((service) => (
                     <div key={service.id} className={`${styles.card} glass`}>
-                        <div className={styles.icon}>{service.icon}</div>
+                        <div className={styles.cardIcon}>{service.icon}</div>
                         <h3>{service.title}</h3>
                         <p>{service.description}</p>
 

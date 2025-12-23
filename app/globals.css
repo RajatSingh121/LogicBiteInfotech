@@ -1,31 +1,59 @@
 :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 10, 10, 30;
-    --background-end-rgb: 0, 0, 0;
+    /* DEFAULT LIGHT MODE */
+    --bg-primary: #f9fafb;
+    --bg-secondary: #ffffff;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-accent: #4f46e5;
 
-    --primary-glow: conic-gradient(from 180deg at 50% 50%,
-            #16abff33 0deg,
-            #0885ff33 55deg,
-            #54d6ff33 120deg,
-            #0071ff33 160deg,
-            transparent 360deg);
-    --secondary-glow: radial-gradient(rgba(255, 255, 255, 0.1),
-            rgba(255, 255, 255, 0));
+    --card-bg: #ffffff;
+    --card-border: rgba(229, 231, 235, 0.8);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 
-    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --navbar-border: rgba(229, 231, 235, 0.5);
+    --nav-link: #4b5563;
+    --nav-link-hover: #111827;
+
+    --hero-gradient: radial-gradient(circle at 50% 10%, rgba(79, 70, 229, 0.03) 0%, transparent 60%);
+
+    /* Accents (Shared) */
+    --primary-color: #4f46e5;
+    --secondary-color: #8b5cf6;
+    --accent-color: #06b6d4;
+    --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+}
+
+[data-theme='dark'] {
+    /* DARK MODE */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-accent: #818cf8;
+
+    --card-bg: rgba(30, 41, 59, 0.6);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+
+    --navbar-bg: rgba(15, 23, 42, 0.85);
+    --navbar-border: rgba(255, 255, 255, 0.05);
+    --nav-link: #cbd5e1;
+    --nav-link-hover: #ffffff;
+
+    --hero-gradient: radial-gradient(circle at 50% 10%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+    color: var(--text-primary);
+    background: var(--bg-primary);
     min-height: 100vh;
+    font-family: 'Poppins', 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {
@@ -35,15 +63,17 @@ body {
 /* Glassmorphism Utilities */
 .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: var(--glass-border);
     box-shadow: var(--glass-shadow);
 }
 
 .title-gradient {
-    background: linear-gradient(to right, #fff, #a5b4fc);
+    background: linear-gradient(135deg, #111827 0%, #4f46e5 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: none;
+    /* Removed drop shadow for cleaner look */
 }

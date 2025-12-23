@@ -5,11 +5,16 @@
     width: 100%;
     z-index: 1000;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--navbar-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--navbar-border);
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -20,53 +25,81 @@
 .logoContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--bg-primary);
+    /* Light gray background/placeholder if transparent */
+    border: 1px solid var(--navbar-border);
+    transition: transform 0.3s ease;
+    padding: 0;
+    /* Remove padding to force circular fit if image is square-ish */
+}
+
+.logoContainer:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
 }
 
 .logoImage {
     object-fit: contain;
-    height: auto;
-    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
-    /* Glow effect for logo */
+    /* Or 'cover' if the logo is a full square icon */
+    width: 100%;
+    height: 100%;
 }
-
-/* 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-.highlight {
-    color: #0071ff;
-} 
-*/
 
 .links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+    align-items: center;
 }
 
 .link {
-    color: #ccc;
+    color: var(--nav-link);
+    /* Gray 600 */
     text-decoration: none;
     font-size: 0.95rem;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 0.5rem 0;
+    position: relative;
 }
 
 .link:hover {
-    color: #fff;
+    color: var(--nav-link-hover);
+    /* Gray 900 */
 }
 
 .adminLink {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+    border: 1px solid var(--card-border);
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    background: var(--bg-primary);
+    color: var(--nav-link);
+    margin-left: 1rem;
+    font-size: 0.9rem;
 }
 
 .adminLink:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
+    background: var(--bg-secondary);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.adminLink::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .links {
+        display: none;
+    }
 }

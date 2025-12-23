@@ -1,0 +1,281 @@
+/* Main Layout */
+.container {
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    min-height: 100vh;
+    background: var(--bg-primary);
+}
+
+.editorSection {
+    flex: 1;
+    max-width: 400px;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    height: fit-content;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    position: sticky;
+    top: 100px;
+}
+
+.previewSection {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Form Styling */
+.sectionTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 0.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.2s;
+}
+
+.input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.printBtn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--primary-gradient);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.printBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* =========================================
+   SALARY SLIP (A4 Design)
+   ========================================= */
+.salarySlip {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    padding: 15mm;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: #1a202c;
+    /* Ensure dark text on print */
+    font-family: 'Times New Roman', serif;
+    /* Corporate feel */
+    position: relative;
+}
+
+.companyHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px double #000;
+    padding-bottom: 1rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.companyAddress {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.slipTitle {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+}
+
+/* Employee Details Grid */
+.empDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #000;
+    padding: 1rem;
+}
+
+.detailRow {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.detailLabel {
+    font-weight: bold;
+    width: 120px;
+}
+
+.detailValue {
+    flex: 1;
+    border-bottom: 1px dotted #ccc;
+}
+
+/* Salary Table */
+.salaryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+    border: 1px solid #000;
+}
+
+.salaryTable th,
+.salaryTable td {
+    border: 1px solid #000;
+    padding: 8px 12px;
+}
+
+.salaryTable th {
+    background: #f0f0f0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.amountCol {
+    text-align: right;
+    width: 120px;
+}
+
+.totalRow {
+    font-weight: bold;
+    background: #f8f8f8;
+}
+
+.netSalary {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 2px solid #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Footer Sig */
+.footer {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.signature {
+    text-align: center;
+    border-top: 1px solid #000;
+    width: 200px;
+    padding-top: 0.5rem;
+    font-weight: bold;
+}
+
+.note {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 4rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Watermark */
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 6rem;
+    opacity: 0.03;
+    color: #000;
+    font-weight: 900;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* PRINT MEDIA QUERY - Critical for PDF Generation */
+@media print {
+
+    .editorSection,
+    .sectionTitle {
+        display: none !important;
+    }
+
+    .container {
+        padding: 0;
+        background: white;
+        display: block;
+    }
+
+    .previewSection {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .salarySlip {
+        box-shadow: none;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        page-break-after: always;
+    }
+
+    /* Hide Next.js Sidebar/Navbar if they are outside this component */
+    :global(aside),
+    :global(nav),
+    :global(.admin-sidebar) {
+        display: none !important;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
