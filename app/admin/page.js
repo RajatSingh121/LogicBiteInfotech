@@ -77,11 +77,11 @@ export default function AdminDashboard() {
                             <span className={styles.actionIcon}>👥</span>
                             <span>Review Applications</span>
                         </Link>
-                        <Link href="#" className={styles.actionCard}>
+                        <Link href="/admin/settings" className={styles.actionCard}>
                             <span className={styles.actionIcon}>⚙️</span>
                             <span>Settings</span>
                         </Link>
-                        <Link href="#" className={styles.actionCard}>
+                        <Link href="/admin/analytics" className={styles.actionCard}>
                             <span className={styles.actionIcon}>📊</span>
                             <span>Analytics</span>
                         </Link>
