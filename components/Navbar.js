@@ -1,9 +1,19 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.css';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
+    const pathname = usePathname();
+
+    // Hide Navbar on Admin pages (Admin has its own Sidebar) and Login
+    if (pathname.startsWith('/admin') || pathname.startsWith('/login')) {
+        return null;
+    }
+
     return (
         <nav className={`${styles.navbar} glass`}>
             <div className={styles.container}>

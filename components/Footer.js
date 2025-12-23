@@ -1,8 +1,18 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { COMPANY_DETAILS } from '@/lib/company';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+    const pathname = usePathname();
+
+    // Hide Footer on Admin and Login pages
+    if (pathname.startsWith('/admin') || pathname.startsWith('/login')) {
+        return null;
+    }
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
